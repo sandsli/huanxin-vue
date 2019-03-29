@@ -1,0 +1,228 @@
+/* 滚动条 */
+::-webkit-scrollbar-thumb:horizontal {
+    /*水平滚动条的样式*/
+    width: 4px;
+    background-color: #cccccc;
+    -webkit-border-radius: 6px;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background-color: #fff; /*滚动条的背景颜色*/
+    -webkit-border-radius: 0; /*滚动条的圆角宽度*/
+  }
+  ::-webkit-scrollbar {
+    width: 10px; /*滚动条的宽度*/
+    height: 8px; /*滚动条的高度*/
+  }
+  ::-webkit-scrollbar-thumb:vertical {
+    /*垂直滚动条的样式*/
+    height: 50px;
+    background-color: #999;
+    -webkit-border-radius: 4px;
+    outline: 2px solid #fff;
+    outline-offset: -2px;
+    border: 2px solid #fff;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    /*滚动条的hover样式*/
+    height: 50px;
+    background-color: #9f9f9f;
+    -webkit-border-radius: 4px;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  body,
+  html {
+    height: 100%;
+    overflow: hidden;
+  }
+  body,
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    color: #4d4d4d;
+    font: 14px/1.4em "Helvetica Neue", Helvetica, "Microsoft Yahei", Arial,
+      sans-serif;
+    background: url("/assets/images/bg.jpg") no-repeat center;
+    background-size: cover;
+  }
+  ul {
+    list-style: none;
+  }
+  #chat {
+    margin: 20px auto;
+    width: 800px;
+    height: 600px;
+  }
+  #chat {
+    overflow: hidden;
+    border-radius: 3px;
+  }
+  #chat .main,
+  #chat .sidebar {
+    height: 100%;
+  }
+  #chat .sidebar {
+    float: left;
+    width: 200px;
+    color: #f4f4f4;
+    background-color: #2e3238;
+  }
+  #chat .main {
+    position: relative;
+    overflow: hidden;
+    background-color: #eee;
+  }
+  #chat .m-text {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  #chat .m-message {
+    height: calc(100% - 10pc);
+    overflow-y: scroll;
+  }
+  
+  .m-card {
+    padding: 9pt;
+    border-bottom: 1px solid #24272c;
+  }
+  .m-card footer {
+    margin-top: 10px;
+  }
+  .m-card .avatar,
+  .m-card .name {
+    vertical-align: middle;
+  }
+  .m-card .avatar {
+    border-radius: 2px;
+  }
+  .m-card .name {
+    display: inline-block;
+    margin: 0 0 0 15px;
+    font-size: 1pc;
+  }
+  .m-card .search {
+    padding: 0 10px;
+    width: 100%;
+    font-size: 9pt;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    outline: 0;
+    background-color: #26292e;
+  }
+  .m-list {
+    height: 500px;
+  }
+  .m-list ul {
+    height: 500px;
+    overflow-y: scroll;
+  }
+  
+  .m-list li {
+    padding: 9pt 15px;
+    border-bottom: 1px solid #292c33;
+    cursor: pointer;
+    -webkit-transition: background-color 0.1s;
+    transition: background-color 0.1s;
+  }
+  .m-list li:hover {
+    background-color: hsla(0, 0%, 100%, 0.03);
+  }
+  .m-list li.active {
+    background-color: hsla(0, 0%, 100%, 0.1);
+  }
+  .m-list .avatar,
+  .m-list .name {
+    vertical-align: middle;
+  }
+  .m-list .avatar {
+    border-radius: 2px;
+  }
+  .m-list .name {
+    display: inline-block;
+    margin: 0 0 0 15px;
+  }
+  
+  .m-text {
+    height: 10pc;
+    border-top: 1px solid #ddd;
+  }
+  .m-text textarea {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: 0;
+    font-family: Micrsofot Yahei;
+    resize: none;
+  }
+  .m-message {
+    padding: 10px 15px;
+  }
+  .m-message li {
+    margin-bottom: 15px;
+  }
+  .m-message .time {
+    margin: 7px 0;
+    text-align: center;
+  }
+  .m-message .time > span {
+    display: inline-block;
+    padding: 0 18px;
+    font-size: 9pt;
+    color: #fff;
+    border-radius: 2px;
+    background-color: #dcdcdc;
+  }
+  .m-message .avatar {
+    float: left;
+    margin: 0 10px 0 0;
+    border-radius: 3px;
+  }
+  .m-message .text {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    max-width: calc(100% - 40px);
+    min-height: 30px;
+    line-height: 2.5;
+    font-size: 9pt;
+    text-align: left;
+    word-break: break-all;
+    background-color: #fafafa;
+    border-radius: 4px;
+  }
+  .m-message .text:before {
+    content: " ";
+    position: absolute;
+    top: 9px;
+    right: 100%;
+    border: 6px solid transparent;
+    border-right-color: #fafafa;
+  }
+  .m-message .self {
+    text-align: right;
+  }
+  .m-message .self .avatar {
+    float: right;
+    margin: 0 0 0 10px;
+  }
+  .m-message .self .text {
+    background-color: #b2e281;
+  }
+  .m-message .self .text:before {
+    right: inherit;
+    left: 100%;
+    border-right-color: transparent;
+    border-left-color: #b2e281;
+  }
