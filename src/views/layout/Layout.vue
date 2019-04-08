@@ -25,32 +25,32 @@ export default class Layout extends Vue {
 
 
 <style lang="scss" scoped>
-.app-wrapper {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  &.mobile.openSidebar {
-    position: fixed;
-    top: 0;
-  }
-}
-.drawer-bg {
-  background: #000;
-  opacity: 0.3;
-  width: 100%;
-  top: 0;
-  height: 100%;
-  position: absolute;
-  z-index: 999;
-}
+// .app-wrapper {
+//   position: relative;
+//   height: 100%;
+//   width: 100%;
+//   &.mobile.openSidebar {
+//     position: fixed;
+//     top: 0;
+//   }
+// }
+// .drawer-bg {
+//   background: #000;
+//   opacity: 0.3;
+//   width: 100%;
+//   top: 0;
+//   height: 100%;
+//   position: absolute;
+//   z-index: 999;
+// }
 
-.app-main {
-  /*84 = navbar + tags-view = 50 +34 */
-  min-height: calc(100vh - 84px);
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
+// .app-main {
+//   /*84 = navbar + tags-view = 50 +34 */
+//   min-height: calc(100vh - 84px);
+//   width: 100%;
+//   position: relative;
+//   overflow: hidden;
+// }
 </style>
 
 

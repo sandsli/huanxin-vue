@@ -25,7 +25,7 @@
       <footer class="copyright">
         <span>©</span>
         <span>2019</span>
-        <span>miutour sands</span>
+        <span>sands</span>
       </footer>
     </div>
   </div>
@@ -45,32 +45,9 @@ export default class Login extends Vue {
 
   private sign() {
     let that = this;
-    debugger;
-    chat.login(this.username, this.password, () => {
+    chat.login(this.username, this.password).then(() => {
       that.$router.push("/home");
     });
-    // var options = {
-    //   apiUrl: this.$WebIM.config.apiURL,
-    //   user: this.username,
-    //   pwd: this.password,
-    //   appKey: this.$WebIM.config.appkey,
-    //   success: (res: any) => {
-    //     debugger;
-    //     that.$currentUser = res;
-
-    //     let token = res.access_token;
-    //     //存储token到本地 方便二次登陆
-    //     that.$WebIM.utils.setCookie("webim_" + res.user.uuid, token, 1);
-
-    //     that.$router.push("/home");
-    //   },
-    //   error: (e: any) => {
-    //     alert("登陆失败");
-    //     console.log(e);
-    //   }
-    // };
-
-    // this.$imConn.open(options);
   }
 }
 </script>
@@ -133,15 +110,6 @@ button:focus {
   margin: auto;
   top: 10%;
   bottom: 10%;
-}
-
-.copyright {
-  z-index: 3;
-  position: absolute;
-  width: 100%;
-  bottom: 10px;
-  text-align: center;
-  color: #cccccc;
 }
 
 .webim-sign {
@@ -219,7 +187,7 @@ button:focus {
 .copyright {
   z-index: 3;
   position: absolute;
-  width: 100%;
+  width: 98%;
   bottom: 10px;
   text-align: center;
   color: #cccccc;

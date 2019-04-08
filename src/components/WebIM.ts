@@ -1,8 +1,8 @@
-import { isIntersectionTypeNode } from 'typescript';
 // 引入Strophe方法
 var Strophejs = require('strophe.js');
-var Strophe = (<any>Strophejs).Strophe;
+var Strophe = (Strophejs as any).Strophe;
 
+// 给Strophe.Connection 添加方法
 Strophe.Connection.prototype.setJid = (jid: any) => {
     Strophe.Connection.jid = jid;
     Strophe.Connection.authzid = Strophe.getBareJidFromJid(Strophe.Connection.jid);
@@ -13,20 +13,9 @@ Strophe.Connection.prototype.getJid = () => {
     return Strophe.Connection.jid;
 }
 
-(<any>window).Strophe = Strophe;
+(window as any).Strophe = Strophe;
 
-
-var WebIM = <any>require('easemob-websdk')
-
-// 提供$iq、$build、$msg、$pres等方法
-var meStrophe = require('strophe.js')
-// 声明$iq、$build、$msg、$pres等方法
-
-
-var $iq = meStrophe.$iq
-var $build = meStrophe.$build
-var $msg = meStrophe.$msg
-var $pres = meStrophe.$pres
+var WebIM = require('easemob-websdk') as any;
 
 //配置文件参考环信demo
 var config = {
@@ -56,7 +45,6 @@ var config = {
 //初始化配置
 WebIM.config = config
 
-// debugger
 var conn: any = () => {
     return new WebIM.connection({
         isMultiLoginSessions: WebIM.config.isMultiLoginSessions,
@@ -70,7 +58,6 @@ var conn: any = () => {
     });
 }
 
-
 export interface CurrentUserInfo {
     access_token: string,
     expires_in: number,
@@ -82,7 +69,6 @@ export interface CurrentUserInfo {
         uuid: string
     }
 }
-
 
 export default {
     conn,

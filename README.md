@@ -1,6 +1,15 @@
-# hxchart-ts
+# huanxin-vue
 
-## Project setup
+#### 介绍
+环信WebIM vue 版本 demo
+
+#### 软件架构
+环信WebIM vue typescript版本
+
+
+#### 安装教程
+
+### Project setup
 ```
 npm install
 ```
@@ -15,15 +24,16 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
+#### 使用说明
 
-### Lints and fixes files
-```
-npm run lint
-```
+1. xxxx
+2. xxxx
+3. xxxx
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### 参与贡献
+
+1. Fork 本仓库
+2. 新建 Feat_xxx 分支
+3. 提交代码
+4. 新建 Pull Request
+
